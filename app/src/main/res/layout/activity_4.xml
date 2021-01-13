@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    tools:context=".Activity4">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Maze Game"
+        android:fontFamily="@font/mrsmonster"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@id/tv_select_mode"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <TextView
+        android:id="@+id/tv_select_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Sign Up"
+        android:textSize="30sp"
+        android:fontFamily="@font/days_later"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_select_mode2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"/>
+
+    <TextView
+        android:id="@+id/tv_select_mode2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please signup to save your game records"
+        android:textSize="18sp"
+        android:fontFamily="@font/roboto"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/btn1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_select_mode"/>
+
+    <EditText
+        android:id="@+id/btn1"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/white_back"
+        android:hint="Email"
+        android:fontFamily="@font/roboto"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@id/btn2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_select_mode2"/>
+
+    <EditText
+        android:id="@+id/btn2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/white_back"
+        android:hint="Password"
+        android:fontFamily="@font/roboto"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@id/btn3"
+        app:layout_constraintLeft_toLeftOf="@id/btn1"
+        app:layout_constraintRight_toRightOf="@id/btn1"
+        app:layout_constraintTop_toBottomOf="@id/btn1"/>
+
+    <TextView
+        android:id="@+id/btn3"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/blue_back"
+        android:text="Sign-up"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="@id/btn2"
+        app:layout_constraintRight_toRightOf="@id/btn2"
+        app:layout_constraintBottom_toTopOf="@id/tv_1"
+        app:layout_constraintTop_toBottomOf="@id/btn2"/>
+
+    <RadioButton
+        android:id="@+id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="I agree with privacy policy"
+        android:fontFamily="@font/roboto"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/btn3"
+        app:layout_constraintTop_toBottomOf="@id/btn3"
+        app:layout_constraintBottom_toTopOf="@id/tv_2"
+        />
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Already have an account ? Login"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/roboto"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_1"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
