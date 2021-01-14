@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Activity3 extends AppCompatActivity {
-    TextView title, selectMode, selectMode2;
+    TextView title, selectMode, selectMode2, backButton;
     ImageView imageView;
     private View gameView, btnStartEasy, btnStartMedium, btnStartHard, btnBack;
 
@@ -26,6 +26,7 @@ public class Activity3 extends AppCompatActivity {
         btnStartMedium=findViewById(R.id.btn2);
         btnStartHard=findViewById(R.id.btn3);
         btnBack=findViewById(R.id.btn4);
+        backButton=findViewById(R.id.btn4);
         btnStartEasy.setOnClickListener(v->{
             title.setVisibility(View.INVISIBLE);
             imageView.setVisibility(View.INVISIBLE);
@@ -36,6 +37,14 @@ public class Activity3 extends AppCompatActivity {
             btnStartHard.setVisibility(View.INVISIBLE);
             btnBack.setVisibility(View.INVISIBLE);
             gameView.setVisibility(View.VISIBLE);
+        });
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(), Activity2.class);
+                startActivity(intent);
+                finish();
+            }
         });
     }
 }

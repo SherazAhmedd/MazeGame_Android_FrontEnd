@@ -24,10 +24,6 @@ public class MainActivity extends AppCompatActivity {
         btn4.setOnClickListener(v -> {
                 finish();
                 System.exit(0);
-
         });
-
-
-
     }
 }
