@@ -18,9 +18,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
+import java.io.ObjectInputStream;
 import java.net.CookieHandler;
 
 public class ProfileActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
@@ -29,6 +31,7 @@ public class ProfileActivity extends AppCompatActivity implements GoogleApiClien
     private Button signOut;
     private GoogleApiClient googleApiClient;
     private GoogleSignInOptions googleSignInOptions;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,13 +70,36 @@ public class ProfileActivity extends AppCompatActivity implements GoogleApiClien
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
-    private void HandleSignInResult(GoogleSignInResult result, CookieHandler Picasso){
+    private void handleSignInResult(GoogleSignInResult result){
         if(result.isSuccess()){
             GoogleSignInAccount account=result.getSignInAccount();
             name.setText(account.getDisplayName());
             email.setText(account.getEmail());
             id.setText(account.getId());
 
+            //Picasso.get().load(account.getPhotoUrl()).placeholder(R.mipmap.ic_launcher).into(profileImage);
+        }
+        else{
+            goToActivity5();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        OptionalPendingResult <GoogleSignInResult> optionalPendingResult=Auth.GoogleSignInApi.silentSignIn(googleApiClient);
+        if(optionalPendingResult.isDone()){
+            GoogleSignInResult result=optionalPendingResult.get();
+            handleSignInResult(result);
+        }
+        else{
+            optionalPendingResult.setResultCallback(new ResultCallback<GoogleSignInResult>() {
+                @Override
+                public void onResult(@NonNull GoogleSignInResult result) {
+                    handleSignInResult(result);
+                }
+            });
         }
     }
 }

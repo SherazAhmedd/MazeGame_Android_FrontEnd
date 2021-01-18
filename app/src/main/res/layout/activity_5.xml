@@ -30,7 +30,8 @@
         app:layout_constraintBottom_toTopOf="@id/tv_select_mode"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title" />
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/tv_select_mode"
@@ -120,6 +121,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:gravity="center"
+        android:text="Google Sign In"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="530dp" />
 
