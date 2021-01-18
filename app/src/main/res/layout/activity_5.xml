@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Maze Game"
         android:fontFamily="@font/mrsmonster"
+        android:text="Maze Game"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@id/logo"
@@ -37,9 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/days_later"
         android:gravity="center"
         android:text="Login Now"
-        android:fontFamily="@font/days_later"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -86,16 +86,16 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/white_back"
-        android:hint="Password"
-        android:textSize="20sp"
         android:fontFamily="@font/roboto"
-        android:textColor="@color/black"
         android:gravity="center_vertical"
+        android:hint="Password"
         android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/btn3"
         app:layout_constraintLeft_toLeftOf="@id/btn1"
         app:layout_constraintRight_toRightOf="@id/btn1"
-        app:layout_constraintTop_toBottomOf="@id/btn1"/>
+        app:layout_constraintTop_toBottomOf="@id/btn1" />
 
     <TextView
         android:id="@+id/btn3"
@@ -103,45 +103,53 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/blue_back"
-        android:text="Login"
-        android:textSize="24sp"
         android:fontFamily="@font/roboto"
-        android:textColor="@color/white"
         android:gravity="center"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_1"
         app:layout_constraintLeft_toLeftOf="@id/btn2"
         app:layout_constraintRight_toRightOf="@id/btn2"
-        app:layout_constraintBottom_toTopOf="@id/tv_1"
-        app:layout_constraintTop_toBottomOf="@id/btn2"/>
+        app:layout_constraintTop_toBottomOf="@id/btn2" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="530dp" />
 
     <RadioButton
         android:id="@+id/tv_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Remember Me"
         android:fontFamily="@font/roboto"
+        android:text="Remember Me"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@id/btn3"
-        app:layout_constraintEnd_toStartOf="@id/tv_forgot"
-        app:layout_constraintTop_toBottomOf="@id/btn3"
         app:layout_constraintBottom_toTopOf="@id/tv_2"
-        />
+        app:layout_constraintEnd_toStartOf="@id/tv_forgot"
+        app:layout_constraintStart_toStartOf="@id/btn3"
+        app:layout_constraintTop_toBottomOf="@id/btn3" />
 
     <TextView
         android:id="@+id/tv_forgot"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
+        android:fontFamily="@font/roboto"
         android:text="Forgot password?"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        android:fontFamily="@font/roboto"
-        app:layout_constraintStart_toEndOf="@id/tv_1"
-        app:layout_constraintEnd_toEndOf="@id/btn3"
-        app:layout_constraintTop_toTopOf="@id/tv_1"
         app:layout_constraintBottom_toBottomOf="@id/tv_1"
-        />
+        app:layout_constraintEnd_toEndOf="@id/btn3"
+        app:layout_constraintStart_toEndOf="@id/tv_1"
+        app:layout_constraintTop_toTopOf="@id/tv_1" />
 
 
     <TextView
@@ -149,13 +157,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto"
         android:text="Don't have an account ? SignUp"
         android:textColor="#FFFFFF"
-        android:fontFamily="@font/roboto"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_1"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
