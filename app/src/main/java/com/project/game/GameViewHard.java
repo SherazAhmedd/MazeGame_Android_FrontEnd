@@ -1,6 +1,5 @@
 package com.project.game;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Stack;
 
-public class GameView extends View {
+public class GameViewHard extends View {
     private float margin;
 
     private enum Direction{
@@ -23,12 +22,12 @@ public class GameView extends View {
     }
     private Cell[][] cells;
     private Cell player, exit;
-    private static final int COLS=7, ROWS=7;
+    private static final int COLS=13, ROWS=13;
     private static final float wallThickness=5;
     private float cellSize, horizontalMargin, verticalMargin;
     private Paint wallPaint, playerPaint, exitPaint, visitedPaint;
     private Random random;
-    public GameView(Context context, @Nullable AttributeSet attrs) {
+    public GameViewHard(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         wallPaint=new Paint();
@@ -48,8 +47,8 @@ public class GameView extends View {
 
         createMaze();
     }
-    private Cell getNeighbour(Cell cell){
-        ArrayList<Cell> neighbours=new ArrayList<>();
+    private GameViewHard.Cell getNeighbour(GameViewHard.Cell cell){
+        ArrayList<GameViewHard.Cell> neighbours=new ArrayList<>();
         //left neighbour
         if(cell.col>0)
             if(!cells[cell.col-1][cell.row].visited)
@@ -72,7 +71,7 @@ public class GameView extends View {
         }
         return null;
     }
-    private void removeWall(Cell current, Cell next){
+    private void removeWall(GameViewHard.Cell current, GameViewHard.Cell next){
         //for below
         if(current.col==next.col && current.row==next.row+1){
             current.topWall=false;
@@ -95,13 +94,13 @@ public class GameView extends View {
         }
     }
     private void createMaze(){
-        Stack<Cell> stack=new Stack<>();
-        Cell current, next;
+        Stack<GameViewHard.Cell> stack=new Stack<>();
+        GameViewHard.Cell current, next;
 
-        cells=new Cell[COLS][ROWS];
+        cells=new GameViewHard.Cell[COLS][ROWS];
         for(int x=0; x<COLS; x++){
             for(int y=0; y<ROWS; y++){
-                cells[x][y]=new Cell(x,y);
+                cells[x][y]=new GameViewHard.Cell(x,y);
             }
         }
 
@@ -192,7 +191,7 @@ public class GameView extends View {
                 (exit.row+1)*cellSize-margin,
                 exitPaint);
     }
-    private void movePlayer(Direction direction){
+    private void movePlayer(GameViewHard.Direction direction){
         switch (direction){
             case UP:
                 if(!player.topWall)
@@ -240,19 +239,19 @@ public class GameView extends View {
                     //move in x-direction
                     if(dx>0)
                         //move to the right
-                        movePlayer(Direction.RIGHT);
+                        movePlayer(GameViewHard.Direction.RIGHT);
                     else
                         //move to the left
-                        movePlayer(Direction.LEFT);
+                        movePlayer(GameViewHard.Direction.LEFT);
                 }
                 else{
                     //move in y-direction
                     if(dy>0)
                         //move down
-                        movePlayer(Direction.DOWN);
+                        movePlayer(GameViewHard.Direction.DOWN);
                     else
                         //move up
-                        movePlayer(Direction.UP);
+                        movePlayer(GameViewHard.Direction.UP);
                 }
             }
             return true;
