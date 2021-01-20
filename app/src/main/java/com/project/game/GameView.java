@@ -1,15 +1,19 @@
 package com.project.game;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatCallback;
+import androidx.appcompat.view.ActionMode;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -213,9 +217,14 @@ public class GameView extends View {
         checkExit();
         invalidate();
     }
+//    private void openPopUpWindow(){
+//        Intent intent=new Intent(getContext(), PopUpActivity.class);
+//        getContext().startActivity(intent);
+//    }
     private void checkExit(){
         if(player==exit){
-            createMaze();
+            Intent intent=new Intent(getContext(), PopUpActivity.class);
+            getContext().startActivity(intent);
         }
     }
     @Override
