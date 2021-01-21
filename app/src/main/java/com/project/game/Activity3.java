@@ -30,37 +30,13 @@ public class Activity3 extends AppCompatActivity {
         btnBack=findViewById(R.id.btn4);
         backButton=findViewById(R.id.btn4);
         btnStartEasy.setOnClickListener(v->{
-            title.setVisibility(View.INVISIBLE);
-            imageView.setVisibility(View.INVISIBLE);
-            selectMode.setVisibility(View.INVISIBLE);
-            selectMode2.setVisibility(View.INVISIBLE);
-            btnStartEasy.setVisibility(View.INVISIBLE);
-            btnStartMedium.setVisibility(View.INVISIBLE);
-            btnStartHard.setVisibility(View.INVISIBLE);
-            btnBack.setVisibility(View.INVISIBLE);
-            gameView.setVisibility(View.VISIBLE);
+            easyMaze();
         });
         btnStartMedium.setOnClickListener(v ->{
-            title.setVisibility(View.INVISIBLE);
-            imageView.setVisibility(View.INVISIBLE);
-            selectMode.setVisibility(View.INVISIBLE);
-            selectMode2.setVisibility(View.INVISIBLE);
-            btnStartEasy.setVisibility(View.INVISIBLE);
-            btnStartMedium.setVisibility(View.INVISIBLE);
-            btnStartHard.setVisibility(View.INVISIBLE);
-            btnBack.setVisibility(View.INVISIBLE);
-            gameViewMedium.setVisibility(View.VISIBLE);
+            mediumMaze();
         });
         btnStartHard.setOnClickListener(v ->{
-            title.setVisibility(View.INVISIBLE);
-            imageView.setVisibility(View.INVISIBLE);
-            selectMode.setVisibility(View.INVISIBLE);
-            selectMode2.setVisibility(View.INVISIBLE);
-            btnStartEasy.setVisibility(View.INVISIBLE);
-            btnStartMedium.setVisibility(View.INVISIBLE);
-            btnStartHard.setVisibility(View.INVISIBLE);
-            btnBack.setVisibility(View.INVISIBLE);
-            gameViewHard.setVisibility(View.VISIBLE);
+            hardMaze();
         });
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,5 +46,38 @@ public class Activity3 extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    public void easyMaze() {
+        title.setVisibility(View.INVISIBLE);
+        imageView.setVisibility(View.INVISIBLE);
+        selectMode.setVisibility(View.INVISIBLE);
+        selectMode2.setVisibility(View.INVISIBLE);
+        btnStartEasy.setVisibility(View.INVISIBLE);
+        btnStartMedium.setVisibility(View.INVISIBLE);
+        btnStartHard.setVisibility(View.INVISIBLE);
+        btnBack.setVisibility(View.INVISIBLE);
+        gameView.setVisibility(View.VISIBLE);
+    }
+    public void mediumMaze(){
+        title.setVisibility(View.INVISIBLE);
+        imageView.setVisibility(View.INVISIBLE);
+        selectMode.setVisibility(View.INVISIBLE);
+        selectMode2.setVisibility(View.INVISIBLE);
+        btnStartEasy.setVisibility(View.INVISIBLE);
+        btnStartMedium.setVisibility(View.INVISIBLE);
+        btnStartHard.setVisibility(View.INVISIBLE);
+        btnBack.setVisibility(View.INVISIBLE);
+        gameViewMedium.setVisibility(View.VISIBLE);
+    }
+    public void hardMaze() {
+        title.setVisibility(View.INVISIBLE);
+        imageView.setVisibility(View.INVISIBLE);
+        selectMode.setVisibility(View.INVISIBLE);
+        selectMode2.setVisibility(View.INVISIBLE);
+        btnStartEasy.setVisibility(View.INVISIBLE);
+        btnStartMedium.setVisibility(View.INVISIBLE);
+        btnStartHard.setVisibility(View.INVISIBLE);
+        btnBack.setVisibility(View.INVISIBLE);
+        gameViewHard.setVisibility(View.VISIBLE);
     }
 }

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,12 +16,13 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatCallback;
 import androidx.appcompat.view.ActionMode;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Stack;
 
-public class GameView extends View {
+public class GameView extends View{
     private float margin;
 
     private enum Direction{
@@ -98,6 +101,7 @@ public class GameView extends View {
             next.leftWall=false;
         }
     }
+    public void nM(){createMaze();}
     private void createMaze(){
         Stack<Cell> stack=new Stack<>();
         Cell current, next;
@@ -225,6 +229,12 @@ public class GameView extends View {
         if(player==exit){
             Intent intent=new Intent(getContext(), PopUpActivity.class);
             getContext().startActivity(intent);
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    createMaze();
+                }
+            }, 1000);
         }
     }
     @Override
