@@ -1,9 +1,12 @@
 package com.project.game;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -214,7 +217,14 @@ public class GameViewHard extends View {
     }
     private void checkExit(){
         if(player==exit){
-            createMaze();
+            Intent intent=new Intent(getContext(), PopUpActivity.class);
+            getContext().startActivity(intent);
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    createMaze();
+                }
+            }, 1000);
         }
     }
     @Override

@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 
 public class PopUpActivity extends Activity {
 
-    Button backButton, homeButton, nextButton;
+    Button backButton, homeButton, nextButtonForEasy, nextButtonForMedium, nextButtonForHard;
     Class createMaze;
 
     @Override
@@ -46,8 +46,8 @@ public class PopUpActivity extends Activity {
             }
         });
 
-        nextButton=findViewById(R.id.nextButton);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        nextButtonForEasy=findViewById(R.id.nextButton);
+        nextButtonForEasy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {Log.i("MY","START");
@@ -59,6 +59,46 @@ public class PopUpActivity extends Activity {
                         method.setAccessible(true);
                         method.invoke(object, null);
                      }catch (Exception e) {
+                    e.printStackTrace();
+                }
+                onBackPressed();
+                finish();
+            }
+        });
+
+        nextButtonForMedium=findViewById(R.id.nextButton);
+        nextButtonForMedium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {Log.i("MY","START");
+                    createMaze = Class.forName("GameViewMedium");
+                    Log.i("MY","START2");
+                    Object object=createMaze.newInstance();
+                    Log.i("MY","START3");
+                    Method method=createMaze.getDeclaredMethod("createMaze", null);
+                    method.setAccessible(true);
+                    method.invoke(object, null);
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+                onBackPressed();
+                finish();
+            }
+        });
+
+        nextButtonForHard=findViewById(R.id.nextButton);
+        nextButtonForHard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {Log.i("MY","START");
+                    createMaze = Class.forName("GameViewHard");
+                    Log.i("MY","START2");
+                    Object object=createMaze.newInstance();
+                    Log.i("MY","START3");
+                    Method method=createMaze.getDeclaredMethod("createMaze", null);
+                    method.setAccessible(true);
+                    method.invoke(object, null);
+                }catch (Exception e) {
                     e.printStackTrace();
                 }
                 onBackPressed();
