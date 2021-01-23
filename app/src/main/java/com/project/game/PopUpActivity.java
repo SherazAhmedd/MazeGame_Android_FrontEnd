@@ -1,19 +1,12 @@
 package com.project.game;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class PopUpActivity extends Activity {
@@ -30,7 +23,7 @@ public class PopUpActivity extends Activity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),Activity3.class);
+                Intent intent=new Intent(getApplicationContext(), SelectDifficulty.class);
                 startActivity(intent);
                 finish();
             }

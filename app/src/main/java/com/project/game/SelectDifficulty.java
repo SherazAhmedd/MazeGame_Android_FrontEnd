@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Activity3 extends AppCompatActivity {
+public class SelectDifficulty extends AppCompatActivity {
     TextView title, selectMode, selectMode2, backButton;
     ImageView imageView;
     private View gameView, gameViewMedium, gameViewHard, btnStartEasy, btnStartMedium, btnStartHard, btnBack;
@@ -41,7 +41,7 @@ public class Activity3 extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(), Activity2.class);
+                Intent intent=new Intent(getApplicationContext(), SelectMode.class);
                 startActivity(intent);
                 finish();
             }

@@ -15,10 +15,10 @@
         android:theme="@style/Theme.GameProject">
         <activity android:name=".PopUpActivity"></activity>
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".Activity5" />
-        <activity android:name=".Activity4" />
-        <activity android:name=".Activity3" />
-        <activity android:name=".Activity2" />
+        <activity android:name=".Login" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".SelectDifficulty" />
+        <activity android:name=".SelectMode" />
         <activity
             android:name=".MainActivity"
             android:noHistory="true">

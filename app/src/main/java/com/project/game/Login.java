@@ -3,10 +3,8 @@ package com.project.game;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
-import android.content.pm.SigningInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -16,17 +14,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.Api;
-import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
-import com.google.android.gms.common.api.Status;
 
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.concurrent.TimeUnit;
-
-public class Activity5 extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class Login extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     SignInButton signInButton;
     private GoogleApiClient googleApiClient;
@@ -61,7 +51,7 @@ public class Activity5 extends AppCompatActivity implements GoogleApiClient.OnCo
         if(requestCode==SIGN_IN){
             GoogleSignInResult result=Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if(result.isSuccess()){
-                startActivity(new Intent(Activity5.this, ProfileActivity.class));
+                startActivity(new Intent(Login.this, ProfileActivity.class));
                 finish();
             }
             else{

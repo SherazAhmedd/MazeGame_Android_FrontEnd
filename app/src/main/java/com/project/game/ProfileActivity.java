@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,9 +20,6 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
-
-import java.io.ObjectInputStream;
-import java.net.CookieHandler;
 
 public class ProfileActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private ImageView profileImage;
@@ -63,7 +59,7 @@ public class ProfileActivity extends AppCompatActivity implements GoogleApiClien
         });
     }
     private void goToActivity5(){
-        startActivity(new Intent(ProfileActivity.this, Activity5.class));
+        startActivity(new Intent(ProfileActivity.this, Login.class));
         finish();
     }
     @Override

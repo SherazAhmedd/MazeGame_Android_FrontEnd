@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class Activity2 extends AppCompatActivity {
+public class SelectMode extends AppCompatActivity {
     TextView singlePlayer, backButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class Activity2 extends AppCompatActivity {
         singlePlayer=findViewById(R.id.btn1);
         backButton=findViewById(R.id.btn4);
         singlePlayer.setOnClickListener(v->{
-            startActivity(new Intent(getApplicationContext(), Activity3.class));
+            startActivity(new Intent(getApplicationContext(), SelectDifficulty.class));
         });
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
