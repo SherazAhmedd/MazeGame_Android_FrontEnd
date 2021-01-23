@@ -16,7 +16,7 @@ public class SelectDifficulty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_3);
+        setContentView(R.layout.select_difficulty);
         title=findViewById(R.id.title);
         imageView=findViewById(R.id.logo);
         selectMode=findViewById(R.id.tv_select_mode);

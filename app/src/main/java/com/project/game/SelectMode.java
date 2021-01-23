@@ -12,7 +12,7 @@ public class SelectMode extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_2);
+        setContentView(R.layout.select_mode);
 
         singlePlayer=findViewById(R.id.btn1);
         backButton=findViewById(R.id.btn4);
