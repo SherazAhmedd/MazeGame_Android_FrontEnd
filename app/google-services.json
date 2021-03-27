@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "571297158805",
+    "project_id": "maze-game-6864b",
+    "storage_bucket": "maze-game-6864b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571297158805:android:01f78bdb9259f745b32d9c",
+        "android_client_info": {
+          "package_name": "com.project.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571297158805-03vd04mo0e3nq8g75vhui7h1r5u8jglk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQVXwhmGLAhuxYy-VqaEcDGgvzyjmtbzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571297158805-03vd04mo0e3nq8g75vhui7h1r5u8jglk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
